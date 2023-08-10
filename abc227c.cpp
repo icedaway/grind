@@ -61,23 +61,15 @@ void init(void){}
 #endif
 
 
-
-
 void fun(){
-  int n,m;std::cin >> n >> m;
-  multiset<int> set;
-  fori(i,n){
-    int temp;std::cin >> temp;
-    set.insert(temp);
+  int n;std::cin >> n;
+  int ans = 0;
+  fora(i,1,pow(n,1/3)){
+    fora(j,i,pow(n/i,1/2)){
+      ans+=(n/(i*j) - j + 1)
+    }
   }
-  fori(i,m){
-    int temp;std::cin >> temp;
-    auto it = set.upper_bound(temp);
-    if(it == set.begin()){std::cout << -1 << "\n";continue;}
-    it--;
-    std::cout << (*it) << "\n";
-    set.erase(it);
-  }
+  std::cout << ans << "\n";
 
 
 }
